@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>TypeScript AMD With Backbone</title>
+    </head>
+
+    <body>
+        <h1>TypeScript AMD</h1>
+        <div id="app">This should be replaced with a message</div>
+        <script src="lib/vendor/jquery.js"></script>
+        <script src="lib/vendor/require.js"></script>
+        <script src="require.config.js"></script>
+        <script>
+            $(document).ready(function(){
+                require(['app'], function(App){
+                    // Annoying module double reference :(
+                    App.app.start();
+                });
+            })
+        </script>
+    </body>
+</html>
